@@ -15,7 +15,9 @@
 const std = @import("std");
 
 pub fn main() void {
-    const scrambled = "great base for all your justice are belong to us";
+    const s = "great base for all your justice are belong to us";
+    var scrambled: [48]u8 = undefined;
+    @memcpy(&scrambled, s);
 
     const base1: []u8 = scrambled[15..23];
     const base2: []u8 = scrambled[6..10];
